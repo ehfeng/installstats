@@ -1,0 +1,9 @@
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+  <dl>
+    {{ form.csrf_token }}
+    {{ render_field(form.language) }}
+    {{ render_field(form.name) }}
+  </dl>
+  <p><input type=submit value="Add Source">
+</form>
