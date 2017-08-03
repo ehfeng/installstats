@@ -1,5 +1,5 @@
 from celery.schedules import crontab
-from flask import render_template
+from flask import render_template, redirect, url_for
 
 from installstats.models import Source
 from installstats.forms import SourceForm
@@ -24,10 +24,11 @@ celery.conf.beat_schedule = {
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    sources = Source.query.all()
+    return render_template('index.html', sources=sources)
 
 
-@app.route('/source/new')
+@app.route('/source/new', methods=['GET', 'POST'])
 def create_source():
     form = SourceForm()
     if form.validate_on_submit():

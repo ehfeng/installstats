@@ -5,5 +5,10 @@
 </head>
 <body>
 <a href="{{ url_for('create_source') }}">Add a source</a>
+<ul>
+{% for source in sources %}
+<li>{{ source.language }}: {{ source.name }} <a href="{{ url_for('delete_source', source.id) }}">x</a></li>
+{% endfor %}
+</ul>
 </body>
 </html>

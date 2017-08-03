@@ -34,6 +34,8 @@ class Source(db.Model):
     language = db.Column(db.Enum(SourceLanguage))
     name = db.Column(db.Text)
 
+    db.UniqueConstraint('language', 'name')
+
     def __init__(self, language, name):
         self.language = language
         self.name = name
