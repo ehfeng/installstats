@@ -19,7 +19,7 @@ itsdangerous==0.24
 Jinja2==2.9.6
 kombu==4.1.0
 MarkupSafe==1.0
-protobuf==3.3.0
+protobuf==3.15.0
 pyasn1==0.2.3
 pyasn1-modules==0.0.9
 pytz==2017.2
